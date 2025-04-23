@@ -1,0 +1,17 @@
+{
+  "name": "template-processor",
+  "version": "1.0.0",
+  "description": "Process template configuration files",
+  "main": "index.ts",
+  "scripts": {
+    "build": "bun index.ts"
+  },
+  "dependencies": {
+    "glob": "^10.3.10",
+    "yaml": "^2.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "bun-types": "latest"
+  }
+}

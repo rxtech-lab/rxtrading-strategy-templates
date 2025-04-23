@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=https://rx-snippet-repo-spec-visulization.vercel.app/api/spec/repository?content-type=json
+name: Simple Strategy
+description: A simple strategy for Argo Trading
+category: Simple
+
+globalConfig:
+  templatePath: ./
+
+permissions: []
+lifecycle: []
+steps:
+  - type: template
+    name: Simple Strategy
+    files:
+      - file: go.mod.tmpl
+        output: go.mod
+      - output: strategy.go
+        file: strategy.go.tmpl
+      - file: gitignore.tmpl
+        output: .gitignore
+      - file: malefile.tmpl
+        output: Makefile
+    lifecycle:
+      - on: afterStep
+        type: bash
+        files: []
+        command:
+          go get github.com/rxtech-lab/argo-trading@latest && go mod download &&
+          go mod tidy
+    form:
+      type: object
+      required:
+        - packageName
+        - strategyName
+      properties:
+        packageName:
+          type: string
+        strategyName:
+          type: string
+          minLength: 1
