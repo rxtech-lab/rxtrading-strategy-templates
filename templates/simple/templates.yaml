@@ -6,7 +6,8 @@ category: Simple
 globalConfig:
   templatePath: ./
 
-permissions: []
+permissions:
+  - writeFile
 lifecycle: []
 steps:
   - type: template
