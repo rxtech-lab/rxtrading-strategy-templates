@@ -1,7 +1,7 @@
+import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { glob } from "glob";
-import { readFileSync, writeFileSync, mkdirSync, existsSync, cpSync } from "fs";
-import { dirname, join, basename } from "path";
-import { parse, stringify } from "yaml";
+import { basename, dirname, join } from "path";
+import { parse } from "yaml";
 
 interface TemplateFile {
   file: string;

@@ -4,9 +4,11 @@
   "description": "Process template configuration files",
   "main": "index.ts",
   "scripts": {
-    "build": "bun index.ts"
+    "build": "bun index.ts",
+    "validate": "bun validate-templates.ts"
   },
   "dependencies": {
+    "ajv": "^8.17.1",
     "glob": "^10.3.10",
     "yaml": "^2.7.1"
   },
